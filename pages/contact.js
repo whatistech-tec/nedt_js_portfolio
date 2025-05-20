@@ -113,9 +113,10 @@ export default function contact() {
                             </div>
                             <div className="rightcontcheckbox">
                                 {[
-                                    'Website Development',
-                                    'App Development',
-                                    'Design System',
+                                    'Frontend Development',
+                                    'Backend Development',
+                                    'Fullstack Development',
+                                    // 'Design System',
                                     'Website Migration',
                                     'E-commerce Site',
                                     'Performance Evaluation'

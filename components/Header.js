@@ -44,7 +44,7 @@ export default function Header() {
 
     const [mobile, setMobile] = useState(false);
     const handleMobileOpen = () => {
-        setMobile(mobile);
+        setMobile(!mobile);
     }
 
     const handleMobileClose = () => {
@@ -53,33 +53,35 @@ export default function Header() {
    
     return <>
         <header>
-            <nav className="container flex flex-sb">
+            <nav className="container flex flex-sb sticky">
+                {/* <div className="navlistenlogo"> */}
                 <div className="logo flex gap-2">
                     <Link href="/"><img src={`/img/${darkMode ? 'white' : 'logo'}.png`} alt="Hesborn"/></Link>
-                    {/* <h2>anyandarhesbon@gmail.com</h2> */}
+                    <h2>anyandarhesbon@gmail.com</h2>
                 </div>
                 <div className="navlist flex gap-2">
                     <ul className="flex gap-2">
+                       
                         <li>
-                            <Link href='/' className="active">Home</Link>
+                            <Link href='/' onClick={() => handleLinkClick('/')} className={activeLink === '/' ? 'active' : ''}>Home</Link>
                         </li>
                         <li>
-                            <Link href='/services'>Services</Link>
+                            <Link href='/services' onClick={() => handleLinkClick('/services')} className={activeLink === '/services' ? 'active' : ''}>Services</Link>
                         </li>
                         <li>
-                            <Link href='/projects'>Projects</Link>
+                            <Link href='/projects' onClick={() => handleLinkClick('/projects')} className={activeLink === '/projects' ? 'active' : ''}>Projects</Link>
                         </li>
                         <li>
-                            <Link href='/blogs'>Blogs</Link>
+                            <Link href='/blogs' onClick={() => handleLinkClick('/blogs')} className={activeLink === '/blogs' ? 'active' : ''}>Blogs</Link>
                         </li>
                         <li>
-                            <Link href='/gallery'>Gallery</Link>
+                            <Link href='/gallery' onClick={() => handleLinkClick('/gallery')} className={activeLink === '/gallery' ? 'active' : ''}>Gallery</Link>
                         </li>
                         <li>
-                            <Link href='/shop'>Shop</Link>
+                            <Link href='/shop' onClick={() => handleLinkClick('/shop')} className={activeLink === '/shop' ? 'active' : ''}>Shop</Link>
                         </li>
                         <li>
-                            <Link href='/contact'>Contact</Link>
+                            <Link href='/contact' onClick={() => handleLinkClick('/contact')} className={activeLink === '/contact' ? 'active' : ''}>Contact</Link>
                         </li>
                     </ul>
                     <div className="darkmodetoggle" onClick={toggleDarkMode}>
@@ -91,6 +93,7 @@ export default function Header() {
                         <HiMiniBars3BottomRight/>
                     </div>
                 </div>
+                {/* </div> */}
                 <div className={mobile ? "mobilenavlist active" : "mobilenavlist"}>
                     <span onClick={handleMobileClose} className={mobile ? "active" : ""}></span>
                     <div className="active"></div>
@@ -106,7 +109,7 @@ export default function Header() {
                             <Link href="/blogs" onClick={() => handleLinkClick('/blogs')} className={activeLink === '/blogs' ? 'active' : ''}>Blogs</Link>
                         </li>
                         <li>
-                            <Link href="/gellery" onClick={() => handleLinkClick('/gellery')} className={activeLink === '/gellery' ? 'active' : ''}>Gallery</Link>
+                            <Link href="/gallery" onClick={() => handleLinkClick('/gallery')} className={activeLink === '/gallery' ? 'active' : ''}>Gallery</Link>
                         </li>
                         <li>
                             <Link href="/services" onClick={() => handleLinkClick('/services')} className={activeLink === '/services' ? 'active' : ''}>Services</Link>

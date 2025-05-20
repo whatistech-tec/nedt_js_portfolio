@@ -29,7 +29,7 @@ body {
 
 .hero_img_box img {
     content: var(--image-url);
-    max-width: 500px;
+    min-width: 500px;
     max-height: 500px;
    
 }
@@ -360,7 +360,9 @@ header.sticky {
     font-size: 18px;
     font-weight: 500;
 }
-
+.navlistenlogo{
+    position: sticky;
+}
 .navlist li a {
     position: relative;
     font-size: 18px;
@@ -563,7 +565,7 @@ header.sticky {
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
 
 .hero {
-    padding: 250px 0 50px;
+    padding: 200px 0 50px;
     background: #0f0715;
     position: relative;
     overflow: hidden;
@@ -605,7 +607,7 @@ header.sticky {
 }
 
 .hero_title {
-    font-size: 72px;
+    font-size: 56px;
     background: linear-gradient(to right, var(--main-site-color) 0%, #fff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -646,7 +648,7 @@ header.sticky {
     font-weight: 500;
     color: var(--main-site-color);
     border-radius: 50px;
-    padding: 22px 42px;
+    padding: 16px 32px;
     border: 1px solid var(--main-site-color);
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;

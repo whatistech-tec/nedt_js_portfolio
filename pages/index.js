@@ -79,19 +79,19 @@ const formatDate = (date) => {
   // services data
   const services = [
     {
-      title: "Web Development",
-      description: "I am very good in web development offering services, I offer reliable web development services to generate the most remarkable results which your business need."
+      title: "Frontend Development",
+      description: "I am very good in frontend development offering services, I offer reliable web development services to generate the most remarkable results which your business need."
     },
     {
-      title: "Mobile Development",
-      description: "Experienced mobile developer offering innovative solutions. Proficient in creating high-performance, user-centric mobile apps. Expertise in iOS, Android, and cross-platform development."
+      title: "Backend Development",
+      description: "Experienced backend developer offering innovative solutions. Proficient in creating high-performance, user-centric mobile web applications. Expertise in Django and Next development."
     },
     {
       title: "Digital Marketing(SEO)",
       description: "My digital marketing services will take your business to the next level, we offer remarkable digital marketing strategies that drives traffic to your website, your business, and improves your brand awareness to potential customers."
     },
     {
-      title: "Content Creator",
+      title: "Content Creator(Minor)",
       description: "Passionate photographer and videographer capturing moments with creativity. Transforming visions into visual stories. Expert in visual storytelling, skilled in both photography and videography to deliver captivating content."
     }
   ];
@@ -120,11 +120,14 @@ const formatDate = (date) => {
           <div className="flex w-100">
             <div className="heroinfoleft">
               <div className="hero_sb_title" data-aos-delay='3000' data-aos='fade-right'>I'm Hesborn Nyang'ara</div>
-              <h1 className="hero_title"  data-aos-delay='3000' data-aos='fade-right'>Fullstack Dev + <br/> Ux Designer</h1>
+              <h1 className="hero_title"  data-aos-delay='3000' data-aos='fade-right'>Fullstack Developer<br/> Based in Kenya</h1>
               <div className="hero_img_box heroimgbox" data-aos='flip-left' data-aos-delay='3000' data-aos-easing='ease-out-cubic' data-aos-duration='2000'> 
                 <img src="/img/dp.png" alt="Hesborn"/>
               </div>
-              <div className="lead" data-aos-delay='3000' data-aos='fade-up'>I break down complex user experience to create integrity focused solutions that connect billions of people</div>
+              <div className="lead" data-aos-delay='3000' data-aos='fade-up'>I specialize in building modern, responsive and user-friendly web interfaces.
+                 With passion for clean code and seamless user experiences, I turn ideas into digital solutions that not only look great but also perform flawlessly. 
+                 
+              </div>
               <div className="hero_btn_box">
                 <Link href="/" download={'/img/resume.pdf'} className="download_cv">Download CV <BiDownload/></Link>
                 <ul className="hero_social">
@@ -169,24 +172,33 @@ const formatDate = (date) => {
         <div className="container">
           <div className="services_titles">
             <h2>My Quality Services</h2>
-            <p>I put your ideas and thus your wishes into a form of unique web project that inspires you and your customers</p>
+            <p>
+              {/* I’m passionate about the intersection of design 🎨 and
+              development 💻. */}
+              I believe the best digital experiences are built
+              with a deep understanding of the user 👤 and a commitment to
+              innovation 🌟. I bring precision 🎯, creativity ✨ and a
+              user-first mindset to every project.</p>
           </div>
           <div className="services_menu">
             {services.map((service, index) => {
-              <div data-aos='fade-up' key={index} className={`services_item ${activeIndex === index ? 'sactive' : ''}`}
-              onMouseHover ={() => handleHover(index)}
-              onMouseOut={handleMouseOut}
-              >
-                <div className="left_s_box">
-                  <span>0{index + 1} </span>
-                  <h3>{service.title}</h3>
+              return (
+                <div data-aos='fade-up' key={index} className={`services_item ${activeIndex === index ? 'sactive' : ''}`}
+                  onMouseOver={() => handleHover(index)}
+                  onMouseOut={handleMouseOut}
+                >
+                  <div className="left_s_box">
+                    <span>0{index + 1} </span>
+                    <h3>{service.title}</h3>
+                  </div>
+                  <div className="right_s_box">
+                    <p>{service.description}</p>
+                  </div>
+                  <GoArrowUpRight />
                 </div>
-                <div className="right_s_box">
-                  <p>{service.description}</p>
-                </div>
-                <GoArrowUpRight/>
-              </div>
+              );
             })}
+
           </div>
         </div>
         
@@ -197,14 +209,14 @@ const formatDate = (date) => {
         <div className="container">
           <div className="project_titles">
             <h2>My Recent Works</h2>
-            <p>We put our ideas and thus your wishes in the form of unique web project that inspires you and your customers</p>
+            <p>Explore my latest work, blending creativity and code for functional, responsive websites with clean design and seamless user experiences.</p>
           </div>
           <div className="project_buttons">
-            <button data-aos='fade-right' className={selectedCategory === 'Website Development' ? 'active' : ''} onClick={() => setSelectedCategory('Website Development')}>All</button>
-            <button data-aos='fade-right' className={selectedCategory === 'App Development' ? 'active' : ''} onClick={() => setSelectedCategory('App Development')}>Frontend</button>
-            <button data-aos='fade-left' className={selectedCategory === 'E-commerce Site' ? 'active' : ''} onClick={() => setSelectedCategory('E-commerce Site')}>Fullstack</button>
-            <button data-aos='fade-left' className={selectedCategory === 'Performance Evaluation' ? 'active' : ''} onClick={() => setSelectedCategory('Performance Evaluation')}>Digital</button>
-            {/* <button className={selectedCategory === 'All' ? 'active' : ''} onClick={() => setSelectedCategory('All')}>Content</button> */}
+            <button className={selectedCategory === 'All Projects' ? 'active' : ''} onClick={() => setSelectedCategory('All Projects')}>All</button>
+            <button className={selectedCategory === 'Frontend Development' ? 'active' : ''} onClick={() => setSelectedCategory('Frontend Development')}>Frontend</button>
+            <button className={selectedCategory === 'Fullstack Projects' ? 'active' : ''} onClick={() => setSelectedCategory('Fullstack Projects')}>Fullstack</button>
+            <button className={selectedCategory === 'E-commerce Site' ? 'active' : ''} onClick={() => setSelectedCategory('E-commerce Site')}>E-commerce</button>
+            <button className={selectedCategory === 'Projects Featured in' ? 'active' : ''} onClick={() => setSelectedCategory('Projects Featured in')}>Featured</button>
           </div>
           <div className="projects_cards">
 
@@ -275,16 +287,6 @@ const formatDate = (date) => {
                   <h3>HIGH SCHOOL STUDIES</h3>
                   <p>Nyambaria Boys High</p>
                 </div>
-                {/* <div className="exper_card">
-                  <span>2021 - 2023</span>
-                  <h3>VAGALLY LLC.</h3>
-                  <p>Fullstack Developer</p>
-                </div>
-                <div className="exper_card">
-                  <span>2020 - Present</span>
-                  <h3>DEVTECH IT SOLUTION</h3>
-                  <p>Fullstack Mobile Developer</p>
-                </div> */}
               </div>
             </div>
           </div>
@@ -295,8 +297,8 @@ const formatDate = (date) => {
       <section className="myskills">
           <div className="container">
             <div className="myskills_title">
-              <h2>My Skills</h2>
-              <p>We put our ideas and thus your wishes in the form of unique web project that inspires you and your customers</p>
+              <h2>My Tech Stack</h2>
+              <p>I'm a passionate and lifelong learner. Always Evolving My Tech Stack</p>
             </div>
             <div className="myskils_cards">
               <div className="mys_card" data-aos='fade-right'>
@@ -344,7 +346,8 @@ const formatDate = (date) => {
         <div className="container">
           <div className="myskills_title">
             <h2>Recent Blogs</h2>
-            <p>We put our ideas and thus your wishes in the form of unique web project that inspires you and your customers</p>
+            <p>Crafting responsive, high-performance websites 🌐 with clean code 💻 and a user-focused approach 👥. Let’s build something amazing together 🚀.
+            </p>
           </div>
           <div className="recent_blogs">
             {allwork.slice(0, 3).map((blog) => {
