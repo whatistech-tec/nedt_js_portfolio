@@ -120,12 +120,12 @@ const formatDate = (date) => {
           <div className="flex w-100">
             <div className="heroinfoleft">
               <div className="hero_sb_title" data-aos-delay='3000' data-aos='fade-right'>I'm Hesborn Nyang'ara</div>
-              <h1 className="hero_title"  data-aos-delay='3000' data-aos='fade-right'>Fullstack Developer<br/> Based in Kenya</h1>
+              <h1 className="hero_title"  data-aos-delay='3000' data-aos='fade-right'>Fullstack Dev<br/> Based in Kenya</h1>
               <div className="hero_img_box heroimgbox" data-aos='flip-left' data-aos-delay='3000' data-aos-easing='ease-out-cubic' data-aos-duration='2000'> 
                 <img src="/img/dp.png" alt="Hesborn"/>
               </div>
-              <div className="lead" data-aos-delay='3000' data-aos='fade-up'>I specialize in building modern, responsive and user-friendly web interfaces.
-                 With passion for clean code and seamless user experiences, I turn ideas into digital solutions that not only look great but also perform flawlessly. 
+              <div className="lead" data-aos-delay='3000' data-aos='fade-up'>I build modern, responsive and user-friendly web interfaces.
+                 With clean code and seamless user experiences, I turn ideas into digital solutions that not only look great but also perform flawlessly. 
                  
               </div>
               <div className="hero_btn_box">

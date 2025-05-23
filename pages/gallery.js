@@ -23,15 +23,15 @@ export default function gallery() {
                         </div>
                     </div>
                     <div className="rightimgsec">
-                        <img  src="#" alt="" data-aos='flip-left' data-aos-easing='ease-out-cubic' data-aos-duration='2000'/>
+                        <img  src="./img/finalyear.jpg" alt="" data-aos='flip-left' data-aos-easing='ease-out-cubic' data-aos-duration='2000'/>
                     </div>
                     <div className="r_img_top">
-                        <img src="#" alt="" data-aos='flip-left' data-aos-easing='ease-out-cubic' data-aos-duration='2000'/>
-                        <img src="#" alt="" data-aos='flip-left' data-aos-easing='ease-out-cubic' data-aos-duration='2000'/>
+                        <img src="./img/finalexam.jpg" alt="" data-aos='flip-left' data-aos-easing='ease-out-cubic' data-aos-duration='2000'/>
+                        <img src="./img/topgees.jpg" alt="" data-aos='flip-left' data-aos-easing='ease-out-cubic' data-aos-duration='2000'/>
                     </div>
                 </div>
             </div>
-            <div className="gallerybtnphotos" id="galleryimages">
+            <div className="gallerybtmphotos" id="galleryimages">
                 <div className="container">
                     <div className="gbtmtitles text-center">
                         <h3 data-aos='fade-right'><span>01//</span> OUR PORTFOLIO</h3>

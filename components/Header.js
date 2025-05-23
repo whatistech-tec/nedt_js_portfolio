@@ -41,7 +41,7 @@ export default function Header() {
         setActiveLink(router.pathname);
 
     },[router.pathname]);
-
+    
     const [mobile, setMobile] = useState(false);
     const handleMobileOpen = () => {
         setMobile(!mobile);
@@ -50,14 +50,28 @@ export default function Header() {
     const handleMobileClose = () => {
         setMobile(false);
     }
+    useEffect(() => {
+        window.addEventListener("scroll", isSticky);
+        return()  =>  {
+            window.removeEventListener("scroll", isSticky);
+        }
+
+    },[]);
    
+    const isSticky = () => {
+        const header = document.querySelector('.container');
+        const scrollTop = window.scrollY;
+        scrollTop >= 320 ? header.classList.add('is-sticky') : header.classList.remove('is-sticky');
+
+    }
+
     return <>
         <header>
-            <nav className="container flex flex-sb sticky">
+            <nav className="container flex flex-sb">
                 {/* <div className="navlistenlogo"> */}
                 <div className="logo flex gap-2">
                     <Link href="/"><img src={`/img/${darkMode ? 'white' : 'logo'}.png`} alt="Hesborn"/></Link>
-                    <h2>anyandarhesbon@gmail.com</h2>
+                    {/* <h2>anyandarhesbon@gmail.com</h2> */}
                 </div>
                 <div className="navlist flex gap-2">
                     <ul className="flex gap-2">
